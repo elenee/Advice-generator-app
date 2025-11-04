@@ -1,42 +1,91 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+:root {
+    /* primary */
+    --clr-blue-200: hsl(193, 38%, 86%);
+    --clr-green-300: hsl(150, 100%, 66%);
+
+    /* neutral */
+    --clr-blue-600: hsl(217, 19%, 38%);
+    --clr-blue-900: hsl(217, 19%, 24%);
+    --clr-blue-950: hsl(218, 23%, 16%);
+
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+img, svg {
+    max-width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+body {
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--clr-blue-950);
+    
 }
 
-.card {
-  padding: 2em;
+.card-container {
+    width: 40rem;
+    max-width: 90%;
+    margin: 10rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    background-color: var(--clr-blue-900);
+    border-radius: 1rem;
+    padding: 2rem 1rem 3rem 1rem;
+    position: relative;
 }
 
-.read-the-docs {
-  color: #888;
+.dice-btn {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(50%);
+    background-color: var(--clr-green-300);
+    border: none;
+    display: inline-flex;
+    padding: 1rem;
+    border-radius: 50%
+}
+
+.dice-btn:hover {
+    animation: glow 1.2s ease-in-out infinite alternate;
+    cursor: pointer;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px var(--clr-green-300), 0 0 20px var(--clr-green-300);
+    }
+    to {
+        box-shadow: 0 0 20px var(--clr-green-300), 0 0 40px var(--clr-green-300);
+    }
+}
+
+.dice-img {
+    width: 1.2rem;
+}
+
+
+.divider {
+    width: 80%;
+}
+
+.advice {
+    font-size: 28px;
+    color: var(--clr-blue-200);
+}
+
+.advice-id {
+    color: var(--clr-green-300);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
 }
